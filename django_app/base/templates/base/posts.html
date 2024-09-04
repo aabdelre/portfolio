@@ -15,7 +15,7 @@
 </style>
 
 <div class="main-container">
-	<h1>Posts</h1>
+	<h1>Projects</h1>
 	{% if request.user.is_staff %}
 		<a class="btn btn-warning" href="{% url 'create_post' %}">Create Post</a>
 	{% endif %}

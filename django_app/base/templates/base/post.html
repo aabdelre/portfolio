@@ -62,7 +62,7 @@
 
 <div class="post-container">
 
-	<a class="btn btn-sm btn-primary" href="{% url 'posts' %}">&laquo Back to Posts</a>
+	<a class="btn btn-sm btn-primary" href="{% url 'posts' %}">&laquo Back to Projects</a>
 
 	{% if request.user.is_staff %}
 		 <a class="btn btn-sm btn-primary" href="{% url 'update_post' post.slug %}">Edit</a>
@@ -81,37 +81,6 @@
 	<br>
 
 	<p>{{post.body|safe}}</p>
-
-	<div class="comments-wrapper">
-		<h5>Comments: {{post.postcomment_set.all.count}}</h5>
-		<hr>
-		<!--
-			- Not logged in, output form and say "Register to comment and give room for a message"
-			- When given username 
-		-->
-		{% if request.user.is_authenticated %}
-		<form action="" method="POST">
-			{% csrf_token %}
-			<textarea required class="form-control" placeholder="Leave a comment..." name="comment"></textarea>
-			<br>
-			<input class="btn btn-info" type="submit" value="Submit">
-		</form>
-		{% else %}
-			<p>Create an account to comment:</p>
-			<a class="btn btn-primary" href="{% url 'register' %}">Register/Login</a>
-		{% endif %}
-
-		<hr>
-		{% for comment in post.postcomment_set.all %}
-			<div class="comment">
-				<img class="author-pic" src="{{comment.author.profile_pic.url}}">
-				<div>
-					<p class="comment-author">{{comment.author}}: {{comment.created|date:"M-d-Y"}}</p>
-					<p class="comment-body">{{comment.body}}</p>
-				</div>
-			</div>
-		{% endfor %}
-	</div>
 </div>
 
 {% endblock content %}
