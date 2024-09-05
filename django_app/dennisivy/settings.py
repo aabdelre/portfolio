@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import secret
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -165,12 +165,12 @@ CKEDITOR_CONFIGS = {
 
 AWS_QUERYSTRING_AUTH = False
 
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-#AWS_ACCESS_KEY_ID = 'YOUR-AWS-ACCESS-KEY-ID'
-#AWS_SECRET_ACCESS_KEY = 'YOUR_AWS-SECRET-ACCESS-KEY'
-#AWS_STORAGE_BUCKET_NAME = 'YOU_BUCKET_NAME'
+# AWS_ACCESS_KEY_ID = secret.AWS_ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY = secret.AWS_SECRET_ACCESS_KEY
+# AWS_STORAGE_BUCKET_NAME = 'static-files-portfolio'
 
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = None
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None

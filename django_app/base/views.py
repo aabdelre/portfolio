@@ -19,7 +19,7 @@ from .models import *
 # Create your views here.
 
 def home(request):
-	posts = Post.objects.filter(active=True, featured=True)[0:3]
+	posts = Post.objects.filter(active=True, featured=True)[0:4]
 
 	context = {'posts':posts}
 	return render(request, 'base/index.html', context)
